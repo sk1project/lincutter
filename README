@@ -1,0 +1,20 @@
+LinCutter (Linear Cutter) is interactive vector graphics application 
+for vinyl cutting plotters.
+
+sK1 Project (http://sk1project.org), copyright (C) 2011-2012 by Igor E. Novikov.
+
+How to install: 
+========================================
+ to install package:   python setup.py install
+ (will be installed into Python site-packages/ directory)
+========================================
+ to create source distribution:   python setup.py sdist
+ (creates .tar.gz archive)
+========================================
+ to create binary RPM distribution:  python setup.py bdist_rpm
+========================================
+ to create binary DEB package:  python setup.py bdist_deb
+========================================
+
+help on available distribution formats: 
+python setup.py bdist --help-formats
