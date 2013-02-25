@@ -3,6 +3,7 @@
 	<name>lincutter</name>
 	<comment></comment>
 	<projects>
+		<project>uniconvertor-2.x</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
