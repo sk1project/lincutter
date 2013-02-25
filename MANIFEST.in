@@ -1,0 +1,5 @@
+include GPLv3.txt COPYRIGHTS lincutter MANIFEST.in README setup.cfg
+include src/lincutter.desktop src/lincutter.png src/lincutter.xpm
+include debian/control
+
+recursive-include src/lincutter/share *.*
