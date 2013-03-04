@@ -1,4 +1,6 @@
-#Thu Feb 28 15:01:46 EET 2013
+#Sun Mar 03 14:00:31 EET 2013
 eclipse.preferences.version=1
+encoding//src/lincutter/context/transform.py=utf-8
 encoding//src/lincutter/dialogs/multiply.py=utf-8
 encoding//src/lincutter/dialogs/prefs/pltsetup.py=utf-8
+encoding//src/lincutter/widgets/__init__.py=utf-8
