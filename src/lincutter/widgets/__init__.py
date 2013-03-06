@@ -38,7 +38,10 @@ class ImageButton(gtk.Button):
 
 class ActionButton(gtk.Button):
 	def __init__(self, action):
-		gtk.Button.__init__(self, stock=action.icon)
+		gtk.Button.__init__(self)
+		if action.icon:
+			icon = gtk.image_new_from_stock(action.icon, gtk.ICON_SIZE_MENU)
+			self.add(icon)
 		self.set_property('relief', gtk.RELIEF_NONE)
 		self.set_tooltip_text(action.tooltip)
 		action.connect_proxy(self)
