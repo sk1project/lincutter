@@ -15,7 +15,7 @@
 #	You should have received a copy of the GNU General Public License
 #	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from uc2.libcairo import sum_bbox, is_bbox_in_rect
+from uc2.libgeom import sum_bbox, is_bbox_in_rect
 from uc2 import libcairo
 from uc2.formats.pdxf import model
 
