@@ -1,7 +1,9 @@
-#Sun May 26 15:12:20 EEST 2013
+#Sun May 26 16:02:41 EEST 2013
 eclipse.preferences.version=1
 encoding//src/lincutter/actions.py=utf-8
 encoding//src/lincutter/api.py=utf-8
+encoding//src/lincutter/app_conf.py=utf-8
+encoding//src/lincutter/application.py=utf-8
 encoding//src/lincutter/context/__init__.py=utf-8
 encoding//src/lincutter/context/transform.py=utf-8
 encoding//src/lincutter/context/units.py=utf-8
@@ -12,6 +14,7 @@ encoding//src/lincutter/dialogs/prefs/general.py=utf-8
 encoding//src/lincutter/dialogs/prefs/pltsetup.py=utf-8
 encoding//src/lincutter/icons.py=utf-8
 encoding//src/lincutter/inspector.py=utf-8
+encoding//src/lincutter/presenter.py=utf-8
 encoding//src/lincutter/proxy.py=utf-8
 encoding//src/lincutter/view/selection.py=utf-8
 encoding//src/lincutter/widgets/__init__.py=utf-8
