@@ -108,7 +108,7 @@ class PD_Presenter:
 		self.set_active_page()
 
 
-		self.cms = self.app.default_cms
+		self.cms = self.doc_presenter.cms
 
 		self.api = PresenterAPI(self)
 		self.docarea = DocArea(self.app, self)
