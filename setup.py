@@ -86,3 +86,20 @@ LONG_DEB_DESCRIPTION = ''' .
  Copyright (C) 2011-2013 by Igor E. Novikov 
  .
 '''
+
+############################################################
+#
+# Build data
+#
+############################################################
+src_path = 'src'
+scripts = ['lincutter', ]
+data_files = [
+('/usr/share/applications', ['src/lincutter.desktop', ]),
+('/usr/share/pixmaps/', ['src/lincutter.png', 'src/lincutter.xpm', ]),
+]
+deb_depends = 'python (>=2.4), python (<<3.0), python-gtk2, python-gnome2, '
+deb_depends += 'python-uniconvertor (>=2.0)'
+package_data = {
+'lincutter':libutils.get_resources('src/lincutter', 'src/lincutter/share'),
+}
