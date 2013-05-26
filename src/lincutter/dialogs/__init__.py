@@ -203,7 +203,7 @@ def about_dialog(parent):
 
 	about.set_program_name(parent.app.appdata.app_name)
 	about.set_version(parent.app.appdata.version)
-	about.set_copyright("(Linear Cutter)\nCopyright (C) 2011-2012 by Igor E. Novikov\n")
+	about.set_copyright("(Linear Cutter)\nCopyright (C) 2011-2013 by Igor E. Novikov\n")
 	about.set_website('http://www.sk1project.org')
 	logo = os.path.join(config.resource_dir, 'logo.png')
 	about.set_logo(gtk.gdk.pixbuf_new_from_file(logo))
