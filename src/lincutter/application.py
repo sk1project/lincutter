@@ -59,8 +59,6 @@ class Application(UCApplication):
 		config.load(self.appdata.app_config)
 		config.resource_dir = os.path.join(self.path, 'share')
 
-		self.default_cms = cms.ColorManager([], True)
-
 		icons.load_icons()
 
 		self.cursors = modes.get_cursors()
