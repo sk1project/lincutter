@@ -109,6 +109,7 @@ class PD_Presenter:
 
 
 		self.cms = self.doc_presenter.cms
+		self.cms.use_cms = False
 
 		self.api = PresenterAPI(self)
 		self.docarea = DocArea(self.app, self)
