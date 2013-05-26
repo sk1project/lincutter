@@ -71,7 +71,7 @@ CLASSIFIERS = [
 ]
 LONG_DESCRIPTION = '''
 LinCutter is an open source vector graphics editor for cutting plotters similar 
-to Roland CutStudio, Artcut, or PostCut. The software is designed for HPGL 
+to Roland CutStudio, Artcut or PostCut. The software is designed for HPGL 
 compatible cutting plotters. 
 
 sK1 Project (http://sk1project.org),
@@ -79,7 +79,7 @@ Copyright (C) 2011-2013 by Igor E. Novikov
 '''
 LONG_DEB_DESCRIPTION = ''' .
  LinCutter is an open source vector graphics editor for cutting plotters similar 
- to Roland CutStudio, Artcut, or PostCut. The software is designed for HPGL 
+ to Roland CutStudio, Artcut or PostCut. The software is designed for HPGL 
  compatible cutting plotters.
  . 
  sK1 Project (http://sk1project.org),
@@ -103,3 +103,51 @@ deb_depends += 'python-uniconvertor (>=2.0)'
 package_data = {
 'lincutter':libutils.get_resources('src/lincutter', 'src/lincutter/share'),
 }
+
+############################################################
+#
+# Main build procedure
+#
+############################################################
+
+if len(sys.argv) == 1:
+	print 'Please specify build options!'
+	print __doc__
+	sys.exit(0)
+
+if len(sys.argv) > 1 and sys.argv[1] == 'build_update':
+	sys.exit(0)
+
+if len(sys.argv) > 1 and sys.argv[1] == 'bdist_rpm':
+	CLEAR_BUILD = True
+
+if len(sys.argv) > 1 and sys.argv[1] == 'bdist_deb':
+	DEB_PACKAGE = True
+	CLEAR_BUILD = True
+	sys.argv[1] = 'build'
+
+
+from distutils.core import setup, Extension
+
+setup(name=NAME,
+	version=VERSION,
+	description=DESCRIPTION,
+	author=AUTHOR,
+	author_email=AUTHOR_EMAIL,
+	maintainer=MAINTAINER,
+	maintainer_email=MAINTAINER_EMAIL,
+	license=LICENSE,
+	url=URL,
+	download_url=DOWNLOAD_URL,
+	long_description=LONG_DESCRIPTION,
+	classifiers=CLASSIFIERS,
+	packages=libutils.get_source_structure(),
+	package_dir=libutils.get_package_dirs(),
+	package_data=package_data,
+	data_files=data_files,
+	scripts=scripts)
+
+#################################################
+# .py source compiling
+#################################################
+libutils.compile_sources()
