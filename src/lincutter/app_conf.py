@@ -37,35 +37,35 @@ class AppData:
 	doc_icon = None
 	version = "1.0"
 
-	#Check config root directory
-	app_config_dir = expanduser_unicode(os.path.join('~', '.config', 'lincutter'))
-	if not os.path.lexists(app_config_dir):
-		os.makedirs(app_config_dir)
+	def __init__(self):
+		#Check config root directory
+		self.app_config_dir = expanduser_unicode(os.path.join('~', '.config', 'lincutter'))
+		if not os.path.lexists(self.app_config_dir):
+			os.makedirs(self.app_config_dir)
 
-	#Check color profiles directory	
-	app_color_profile_dir = os.path.join(app_config_dir, 'profiles')
-	if not os.path.lexists(app_color_profile_dir):
-		os.makedirs(app_color_profile_dir)
+		#Check color profiles directory	
+		self.app_color_profile_dir = os.path.join(self.app_config_dir, 'profiles')
+		if not os.path.lexists(self.app_color_profile_dir):
+			os.makedirs(self.app_color_profile_dir)
 
-	for item in uc2const.COLORSPACES + [uc2const.COLOR_DISPLAY, ]:
-		filename = 'built-in_%s.icm' % item
-		path = os.path.join(app_color_profile_dir, filename)
-		if not os.path.lexists(path):
-			profile = libcms.cms_get_default_profile_resource(item)
-			shutil.copy(profile.name, path)
+		for item in uc2const.COLORSPACES + [uc2const.COLOR_DISPLAY, ]:
+			filename = 'built-in_%s.icm' % item
+			path = os.path.join(self.app_color_profile_dir, filename)
+			if not os.path.lexists(path):
+				libcms.cms_save_default_profile(path, item)
 
 
-	#Check clipboard directory
-	app_clipboard_dir = os.path.join(app_config_dir, 'clipboard')
-	if not os.path.lexists(app_clipboard_dir):
-		os.makedirs(app_clipboard_dir)
-	for item in DOC_STRUCTURE:
-		path = os.path.join(app_clipboard_dir, item)
-		if not os.path.lexists(path):
-			os.makedirs(path)
+		#Check clipboard directory
+		self.app_clipboard_dir = os.path.join(self.app_config_dir, 'clipboard')
+		if not os.path.lexists(self.app_clipboard_dir):
+			os.makedirs(self.app_clipboard_dir)
+		for item in DOC_STRUCTURE:
+			path = os.path.join(self.app_clipboard_dir, item)
+			if not os.path.lexists(path):
+				os.makedirs(path)
 
-	#Config file path 
-	app_config = os.path.join(app_config_dir, 'preferences.cfg')
+		#Config file path 
+		self.app_config = os.path.join(self.app_config_dir, 'preferences.cfg')
 
 
 class AppConfig(UCConfig):
